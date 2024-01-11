@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import { NavBar } from './component/NavBar'
-import { Button, Flex, Heading } from '@radix-ui/themes'
+import { Button, Card, Flex, Heading } from '@radix-ui/themes'
 import { BookmarkIcon, StarIcon } from '@radix-ui/react-icons'
 import { Link } from 'react-router-dom'
 
@@ -41,12 +41,13 @@ function Home() {
 					<div className=" flex-grow">
 						<Outlet />
 					</div>
-					<div
-						className=" bg-red-200"
+					<Card
 						style={{
 							width: 220,
 						}}
-					></div>
+					>
+						敬请期待...
+					</Card>
 				</Flex>
 			</div>
 		</div>
