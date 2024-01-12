@@ -28,6 +28,20 @@ export function Category() {
 								</div>
 							</Link>
 						</Card>
+						<Card
+							style={{ minWidth: 240 }}
+							className=" cursor-pointer hover:bg-sky-400 hover:text-white"
+							variant="classic"
+						>
+							<Link to="/home/watermark">
+								<div className=" w-full flex items-center justify-between cursor-pointer">
+									<Text as="div" size="2">
+										水印生成器
+									</Text>
+									<StarIcon width="16" height="16" />
+								</div>
+							</Link>
+						</Card>
 					</Flex>
 				</Tabs.Content>
 				<Tabs.Content value="util">

@@ -1,9 +1,9 @@
 import { Button, Card, Flex, Select, Switch } from '@radix-ui/themes'
-import { StarIcon } from '@radix-ui/react-icons'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { copyToClipboard, rgbToHex } from '../../utils'
 import { useToast } from '../../hooks'
 import picImg from '../../assets/img/picImage.jpeg'
+import { Upload } from '../../component/Upload'
 
 export function PicColor() {
 	const [takeColorCount, setTakeColorCount] = useState<string>('2')
@@ -45,39 +45,17 @@ export function PicColor() {
 				}}
 			>
 				<Flex justify="center" align="center" direction="column">
-					<Card
-						className=" hover:border-cyan-300 "
-						variant="classic"
-						style={{
-							width: 120,
-							height: 40,
+					<Upload
+						onChange={(e: any) => {
+							const file = e.target.files[0]
+							const reader = new FileReader()
+							reader.onload = (event: any) => {
+								const imageUrl = event.target.result
+								setImgUrl(imageUrl)
+							}
+							reader.readAsDataURL(file)
 						}}
-						onClick={() => {}}
-					>
-						<Flex
-							justify="center"
-							align="center"
-							height="100%"
-							className=" relative"
-						>
-							<StarIcon />
-							上传图片
-							<input
-								className=" w-full h-full absolute opacity-0"
-								type="file"
-								onChange={(e: any) => {
-									const file = e.target.files[0]
-									const reader = new FileReader()
-									reader.onload = (event: any) => {
-										const imageUrl = event.target.result
-										setImgUrl(imageUrl)
-										// 在这里使用imageUrl，例如将其设置为img标签的src属性
-									}
-									reader.readAsDataURL(file)
-								}}
-							/>
-						</Flex>
-					</Card>
+					/>
 					<img
 						ref={imgRef}
 						className=" mt-4"

@@ -18,3 +18,8 @@ export function blob2DownLoad(blob: any) {
 	aLink.href = URL.createObjectURL(blob)
 	aLink.click()
 }
+
+export function downloadBase64(base64: string) {
+	const blob = base64ToBlob(base64)
+	blob2DownLoad(blob)
+}

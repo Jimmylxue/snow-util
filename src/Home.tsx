@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function Home() {
 	return (
-		<div className=" w-full h-screen flex flex-col">
+		<div className=" w-full h-screen flex flex-col overflow-x-hidden">
 			<NavBar />
 			<div
 				className=" w-full px-20 py-4 flex-grow"
@@ -42,6 +42,7 @@ function Home() {
 						<Outlet />
 					</div>
 					<Card
+						className=" flex-shrink-0"
 						style={{
 							width: 220,
 						}}
