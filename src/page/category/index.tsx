@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export function Category() {
 	return (
 		<div>
-			<Tabs.Root defaultValue="photo" orientation="vertical">
+			<Tabs.Root defaultValue="css" orientation="vertical">
 				<Tabs.List aria-label="tabs example">
 					<Tabs.Trigger value="css">CSS</Tabs.Trigger>
 					<Tabs.Trigger value="photo">图片</Tabs.Trigger>
