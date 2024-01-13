@@ -21,12 +21,13 @@ import {
 export function WaterMark() {
 	const [imgUrl, setImgUrl] = useState<string>(picImg)
 	const [previewImgSource, setPreviewImgSource] = useState<string>('')
-	const [printType, setPrintType] = useState<'single' | 'full'>('single')
-	const [textType, setTextType] = useState<TextType>('fill')
-	const [textColor, setTextColor] = useState<string>('#2ecc71')
+	const [printType, setPrintType] = useState<'single' | 'full'>('full')
+	const [textType, setTextType] = useState<TextType>('stroke')
+	const [textColor, setTextColor] = useState<string>('#7f8c8d')
 	const [position, setPosition] = useState<TPositionConst>('RIGHT_BOTTOM')
 	const [textSize, setTextSize] = useState<number>(60)
-	const [padding, setPadding] = useState<number>(15)
+	const [padding, setPadding] = useState<number>(200)
+	const [rotate, setRotate] = useState<number>(-15)
 	const [text, setText] = useState<string>('hello world')
 
 	useEffect(() => {
@@ -56,6 +57,7 @@ export function WaterMark() {
 				position,
 				padding,
 				type: textType,
+				rotate,
 			})
 		} else {
 			source = await fullMarker({
@@ -64,7 +66,7 @@ export function WaterMark() {
 				color: textColor,
 				size: textSize,
 				padding: padding,
-				rotate: -15,
+				rotate,
 				type: textType,
 			})
 		}
@@ -184,27 +186,41 @@ export function WaterMark() {
 						/>
 					</div>
 					<div className=" mb-2">
-						<div className=" mb-1">水印位置</div>
-						<Select.Root
-							value={position}
-							onValueChange={value => {
-								setPosition(value as TPositionConst)
-							}}
-						>
-							<Select.Trigger />
-							<Select.Content position="popper">
-								<Select.Item value="LEFT_TOP">左上角</Select.Item>
-								<Select.Item value="CENTER_TOP">上方</Select.Item>
-								<Select.Item value="RIGHT_TOP">右上角</Select.Item>
-								<Select.Item value="LEFT_CENTER">左方</Select.Item>
-								<Select.Item value="CENTER">居中</Select.Item>
-								<Select.Item value="RIGHT_CENTER">右方</Select.Item>
-								<Select.Item value="LEFT_BOTTOM">左下角</Select.Item>
-								<Select.Item value="CENTER_BOTTOM">下方</Select.Item>
-								<Select.Item value="RIGHT_BOTTOM">右下角</Select.Item>
-							</Select.Content>
-						</Select.Root>
+						<div className=" mb-1">旋转角度</div>
+						<TextField.Input
+							type="number"
+							color="indigo"
+							variant="soft"
+							min="-360"
+							max="360"
+							value={rotate}
+							onChange={e => setRotate(+e.target.value)}
+						/>
 					</div>
+					{printType === 'single' && (
+						<div className=" mb-2">
+							<div className=" mb-1">水印位置</div>
+							<Select.Root
+								value={position}
+								onValueChange={value => {
+									setPosition(value as TPositionConst)
+								}}
+							>
+								<Select.Trigger />
+								<Select.Content position="popper">
+									<Select.Item value="LEFT_TOP">左上角</Select.Item>
+									<Select.Item value="CENTER_TOP">上方</Select.Item>
+									<Select.Item value="RIGHT_TOP">右上角</Select.Item>
+									<Select.Item value="LEFT_CENTER">左方</Select.Item>
+									<Select.Item value="CENTER">居中</Select.Item>
+									<Select.Item value="RIGHT_CENTER">右方</Select.Item>
+									<Select.Item value="LEFT_BOTTOM">左下角</Select.Item>
+									<Select.Item value="CENTER_BOTTOM">下方</Select.Item>
+									<Select.Item value="RIGHT_BOTTOM">右下角</Select.Item>
+								</Select.Content>
+							</Select.Root>
+						</div>
+					)}
 					<Flex gap="3" mt="3">
 						<Button color="indigo" variant="soft" onClick={previewImgFn}>
 							预览

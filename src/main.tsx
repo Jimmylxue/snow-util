@@ -11,6 +11,7 @@ import { PicColor } from './page/picColor/index.tsx'
 import { Toast } from './component/Toast.tsx'
 import { ToastProvider } from './hooks'
 import { WaterMark } from './page/watermark/index.tsx'
+import { Blur } from './page/blur/index.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 							<Route path="nokia" element={<Nokia />} />
 							<Route path="picColor" element={<PicColor />} />
 							<Route path="watermark" element={<WaterMark />} />
+							<Route path="blur" element={<Blur />} />
 						</Route>
 						<Route path="*" element={<Navigate to="home/category" replace />} />
 					</Routes>

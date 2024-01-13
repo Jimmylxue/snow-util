@@ -19,10 +19,10 @@ export function Category() {
 							className=" cursor-pointer hover:bg-sky-400 hover:text-white"
 							variant="classic"
 						>
-							<Link to="/home/nokia">
+							<Link to="/home/watermark">
 								<div className=" w-full flex items-center justify-between cursor-pointer">
 									<Text as="div" size="2">
-										诺基亚斗图神器
+										水印生成器
 									</Text>
 									<StarIcon width="16" height="16" />
 								</div>
@@ -33,10 +33,24 @@ export function Category() {
 							className=" cursor-pointer hover:bg-sky-400 hover:text-white"
 							variant="classic"
 						>
-							<Link to="/home/watermark">
+							<Link to="/home/blur">
 								<div className=" w-full flex items-center justify-between cursor-pointer">
 									<Text as="div" size="2">
-										水印生成器
+										高斯模糊生成器
+									</Text>
+									<StarIcon width="16" height="16" />
+								</div>
+							</Link>
+						</Card>
+						<Card
+							style={{ minWidth: 240 }}
+							className=" cursor-pointer hover:bg-sky-400 hover:text-white"
+							variant="classic"
+						>
+							<Link to="/home/nokia">
+								<div className=" w-full flex items-center justify-between cursor-pointer">
+									<Text as="div" size="2">
+										诺基亚斗图神器
 									</Text>
 									<StarIcon width="16" height="16" />
 								</div>
