@@ -1,0 +1,16 @@
+.snow-previewImg{
+  background: rgba(0, 0, 0, 0);
+}
+
+.snow-close-icon{
+  display: none;
+}
+
+.snow-previewImg:hover{
+  background: rgba(0, 0, 0, .3);
+  
+}
+
+.snow-previewImg:hover > .snow-close-icon{
+  display: block;  
+}

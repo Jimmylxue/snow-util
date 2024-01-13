@@ -15,6 +15,7 @@ import {
 	Blur,
 	Mosaic,
 } from '@/pages/home'
+import { QRCode } from './pages/home/qrcode/index.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 							<Route path="watermark" element={<WaterMark />} />
 							<Route path="blur" element={<Blur />} />
 							<Route path="mosaic" element={<Mosaic />} />
+							<Route path="qrcode" element={<QRCode />} />
 						</Route>
 						<Route path="*" element={<Navigate to="home/category" replace />} />
 					</Routes>

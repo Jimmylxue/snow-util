@@ -45,6 +45,9 @@ export const categoryList: TCategoryType = [
 	{
 		name: '工具',
 		value: 'utils',
-		children: [{ link: 'home/translate', name: '翻译助手', isComplete: false }],
+		children: [
+			{ link: '/home/translate', name: '翻译助手', isComplete: false },
+			{ link: '/home/qrcode', name: '文本二维码', isComplete: true },
+		],
 	},
 ]

@@ -25,7 +25,7 @@ export function Blur() {
 	}
 
 	return (
-		<Card>
+		<Card className=" text-sm">
 			<Flex gap="3">
 				<Box
 					className=" flex-shrink-0"

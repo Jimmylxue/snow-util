@@ -36,7 +36,7 @@ export function PicColor() {
 	}, [imgUrl, takeColorCount])
 
 	return (
-		<div>
+		<div className=" text-sm">
 			<Card
 				className=" py-10 relative"
 				style={{

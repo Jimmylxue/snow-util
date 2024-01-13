@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import { NavBar } from './components/NavBar'
 import { Button, Card, Flex, Heading } from '@radix-ui/themes'
-import { BookmarkIcon, Component1Icon, StarIcon } from '@radix-ui/react-icons'
+import { Component1Icon, StarIcon } from '@radix-ui/react-icons'
 import { Link } from 'react-router-dom'
 
 function Home() {
