@@ -1,14 +1,14 @@
 import { Box, Button, Card, Flex, Slider } from '@radix-ui/themes'
-import { Upload } from '../../component/Upload'
+import { Upload } from '@/components/Upload'
 import { useEffect, useState } from 'react'
 import { blur } from 'esay-watermark'
-import picImg from '../../assets/img/picImage.jpeg'
-import { downloadBase64 } from '../../utils/file'
+import picImg from '@/assets/img/picImage.jpeg'
+import { downloadBase64 } from '@/utils/file'
 
 export function Blur() {
 	const [imgUrl, setImgUrl] = useState<string>(picImg)
 	const [previewImgSource, setPreviewImgSource] = useState<string>('')
-	const [radius, setRadius] = useState<number>(30)
+	const [radius, setRadius] = useState<number>(10)
 
 	useEffect(() => {
 		setTimeout(() => {

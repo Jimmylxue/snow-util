@@ -1,9 +1,9 @@
 import { Button, Card, Flex, Select, Switch } from '@radix-ui/themes'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { copyToClipboard, rgbToHex } from '../../utils'
-import { useToast } from '../../hooks'
-import picImg from '../../assets/img/picImage.jpeg'
-import { Upload } from '../../component/Upload'
+import { copyToClipboard, rgbToHex } from '@/utils/index'
+import { useToast } from '@/hooks/index'
+import picImg from '@/assets/img/picImage.jpeg'
+import { Upload } from '@/components/Upload'
 
 export function PicColor() {
 	const [takeColorCount, setTakeColorCount] = useState<string>('2')

@@ -8,11 +8,11 @@ import {
 	Text,
 	TextField,
 } from '@radix-ui/themes'
-import { Upload } from '../../component/Upload'
+import { Upload } from '@/components/Upload'
 import { useEffect, useState } from 'react'
 import { fullMarker, marker } from 'esay-watermark'
-import picImg from '../../assets/img/picImage.jpeg'
-import { downloadBase64 } from '../../utils/file'
+import picImg from '@/assets/img/picImage.jpeg'
+import { downloadBase64 } from '@/utils/file'
 import {
 	TPositionConst,
 	TextType,

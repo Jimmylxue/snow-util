@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
-import { NavBar } from './component/NavBar'
+import { NavBar } from './components/NavBar'
 import { Button, Card, Flex, Heading } from '@radix-ui/themes'
-import { BookmarkIcon, StarIcon } from '@radix-ui/react-icons'
+import { BookmarkIcon, Component1Icon, StarIcon } from '@radix-ui/react-icons'
 import { Link } from 'react-router-dom'
 
 function Home() {
@@ -28,7 +28,7 @@ function Home() {
 				<div className=" mt-10">
 					<div>
 						<Button variant="classic">
-							<BookmarkIcon width="16" height="16" />{' '}
+							<Component1Icon width="16" height="16" />{' '}
 							<Link to="/home/category">分类</Link>
 						</Button>
 						<Button variant="soft" ml="3">
@@ -38,7 +38,13 @@ function Home() {
 				</div>
 
 				<Flex mt="8" gap="5">
-					<div className=" flex-grow">
+					<div
+						className=" flex-grow flex-shrink-0"
+						style={{
+							width: 'min-content',
+							minHeight: 300,
+						}}
+					>
 						<Outlet />
 					</div>
 					<Card
